@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zack Marketplace</title>
+    <!-- Link to Google Font: Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* Apply modern font */
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: white;
+            color: #0078d4; /* Blue */
+            padding: 10px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 32px;
+            border-bottom: 2px solid #ddd;
+        }
+        .marketplace-container {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+            gap: 20px;
+        }
+        .item {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .item h3 {
+            margin-top: 0;
+            color: #0078d4;
+            font-weight: 500;
+        }
+        .item p {
+            color: #555;
+            font-size: 16px;
+        }
+        .button {
+            padding: 10px;
+            background-color: #0078d4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #005fa3;
+        }
+        footer {
+            background-color: white;
+            color: #0078d4;
+            text-align: center;
+            padding: 10px;
+            border-top: 2px solid #ddd;
+        }
+        .back-button {
+            padding: 10px;
+            background-color: #f1f1f1;
+            color: #0078d4;
+            border: 1px solid #0078d4;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+            text-align: center;
+            display: inline-block;
+        }
+        .back-button:hover {
+            background-color: #0078d4;
+            color: white;
+        }
+        .slider {
+            width: 100%;
+            margin: 10px 0;
+        }
+        .zack-points-purchase {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 20px;
+        }
+        .zack-points-purchase h3 {
+            color: #0078d4;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Zack Marketplace</h1>
+    </header>
+
+    <div class="marketplace-container">
+        <!-- Coffee Item -->
+        <div class="item">
+            <h3>Coffee</h3>
+            <p>Get a hot cup of coffee for your break.</p>
+            <button class="button">Buy for 50 Zack Points</button>
+        </div>
+
+        <!-- Donate to Charity Item -->
+        <div class="item">
+            <h3>Donate to Charity</h3>
+            <p>Donate to charity and make a difference today.</p>
+            <label for="donationAmount">Choose amount to donate:</label>
+            <input type="range" id="donationAmount" min="10" max="1000" step="10" value="100" class="slider">
+            <p>Donation Amount: <span id="donationValue">100</span> Zack Points</p>
+            <button class="button">Donate</button>
+        </div>
+
+        <!-- Movie Ticket Item -->
+        <div class="item">
+            <h3>Movie Ticket</h3>
+            <p>Get a ticket to the latest blockbuster movie.</p>
+            <button class="button">Buy for 200 Zack Points</button>
+        </div>
+
+        <!-- Streaming Subscription Item -->
+        <div class="item">
+            <h3>Streaming Subscription</h3>
+            <p>Subscribe to your favorite streaming service for a month.</p>
+            <button class="button">Buy for 500 Zack Points</button>
+        </div>
+
+        <!-- Gift Card Item -->
+        <div class="item">
+            <h3>Gift Card</h3>
+            <p>Buy a gift card for various online stores.</p>
+            <button class="button">Buy for 300 Zack Points</button>
+        </div>
+
+        <!-- Clothing Item -->
+        <div class="item">
+            <h3>Clothing</h3>
+            <p>Buy trendy clothing items for your wardrobe.</p>
+            <button class="button">Buy for 400 Zack Points</button>
+        </div>
+
+        <!-- Game Subscription Item -->
+        <div class="item">
+            <h3>Game Subscription</h3>
+            <p>Get a subscription to the latest gaming platform.</p>
+            <button class="button">Buy for 600 Zack Points</button>
+        </div>
+
+        <!-- Book Item -->
+        <div class="item">
+            <h3>Book</h3>
+            <p>Purchase the latest book release.</p>
+            <button class="button">Buy for 250 Zack Points</button>
+        </div>
+
+
+        <!-- Back Button to go back to ZackIt.html -->
+        <div class="back-button" onclick="window.location.href = 'index.html'">Back to ZackIt</div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 ZackIt Browser - Marketplace</p>
+    </footer>
+
+    <script>
+        // Update donation value display
+        var slider = document.getElementById("donationAmount");
+        var output = document.getElementById("donationValue");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function() {
+            output.innerHTML = this.value;
+        }
+    </script>
+</body>
+</html>
